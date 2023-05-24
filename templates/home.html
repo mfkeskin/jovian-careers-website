@@ -1,52 +1,34 @@
 <!DOCTYPE html>
 <html>
   <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-KK94CHFLLe+nY2dmCWGMq91rCGa5gtU4mk92HdvYe+M/SXH301p5ILy+dN9+nJOZ" crossorigin="anonymous">
     <title>Jovian Careers</title>
     <style>
-      h1 {
-        font-size: 40px;
-        font-family: Roboto;
-        font-weight: normal;
-        color: rgb(50, 50, 50);
-        text-align: center;
-      }
-
       #banner {
-        width:100%;
         height:360px;
-        object-fit: cover;
+        object-fit:cover;
+        width: 100%;
       }
-
-      h2 {
-        font-family: Roboto;
-        font-size: 32px;
-        color:rgb(80, 80, 80);
-      }
-      
-      #container {
-        max-width:720px;
-        margin:0 auto;
-      }
-
-      .bodytext {
-        font-family: Roboto;
-        color: rgb(100, 20, 100);
-      }
-      
     </style>
   </head>
   <body>
-    <div id="container">
-   <h1>Jovian Careers</h1>
-    <img id="banner" src=https://jovian-careers-website.mehmetfatihfat8.repl.co/static/banner.jpg>
-    <h2>About Jovian</h2>
-    <p class="bodytext">
+    <div class="container mt-2 mb-4">
+   <h1 class="text-center">{{company_name}} Careers</h1>
+    <img class="img-fluid" id="banner" src=https://jovian-careers-website.mehmetfatihfat8.repl.co/static/banner.jpg>
+    <h2 class="text-center mt-4 mb-4">About Jovian</h2>
+    <p class="lead">
       Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged. It was popularised in the 1960s with the release of Letraset sheets containing Lorem Ipsum passages, and more recently with desktop publishing software like Aldus PageMaker including versions of Lorem Ipsum.
     </p>
-    <h2>Open Positions</h2>
-    <p class="bodytext">TODO: jobs here</p>
-    <div style="text-align:center;">
-      <button>Contact Us</button>
+    <h2 class="text-center mt-4 mb-4">Open Positions</h2>
+      <div style="margin-bottom:16px;">
+      {% for job in jobs %}
+          {% include 'jobitem.html' %}
+        {% endfor %}
+      </div>
+    <div class="text-center">
+      <button class="btn btn-primary btn-large">Contact Us</button>
     </div>
       <p>Copyrigt 2023, Jovian</p>
     </div>
